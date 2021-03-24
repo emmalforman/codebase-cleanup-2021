@@ -1,13 +1,13 @@
 
 from random import choice
 
-def determine_winner(p1, p2)
+def determine_winner(p1, p2):
     '''
     params: choice p1 and p2 are both strings and 
     can be "rock" "paper" or "scissors"
 
     '''
-        winners = {
+    winners = {
         "rock":{
             "rock": None, # represents a tie
             "paper": "paper",
@@ -24,7 +24,7 @@ def determine_winner(p1, p2)
             "scissors": None, # represents a tie
         },
     }
-    winning_choice = winners[choice1][choice2]
+    winning_choice = winners[p1][p2]
     return winning_choice
 
 if __name__ == '__main__':

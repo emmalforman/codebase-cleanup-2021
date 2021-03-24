@@ -19,7 +19,8 @@ def format_usd(my_price):
 
 #prevent app code from import
 if __name__ == "__main__":
-'''
+    #the syntax here is wrong
+
     products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
     products_df = read_csv(products_filepath)
     products = products_df.to_dict("records")
