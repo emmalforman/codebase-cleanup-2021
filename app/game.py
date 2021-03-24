@@ -7,7 +7,24 @@ def determine_winner(p1, p2)
     can be "rock" "paper" or "scissors"
 
     '''
-    #write the code for this function
+        winners = {
+        "rock":{
+            "rock": None, # represents a tie
+            "paper": "paper",
+            "scissors": "rock",
+        },
+        "paper":{
+            "rock": "paper",
+            "paper": None, # represents a tie
+            "scissors": "scissors",
+        },
+        "scissors":{
+            "rock": "rock",
+            "paper": "scissors",
+            "scissors": None, # represents a tie
+        },
+    }
+    winning_choice = winners[choice1][choice2]
     return winning_choice
 
 if __name__ == '__main__':
@@ -32,36 +49,9 @@ if __name__ == '__main__':
     #
     # DETERMINATION OF WINNER
     #
-
-    if u == "rock":
-        if c == "rock"
-            print("It's a tie!")
-        elif c == "paper"
-            print("The computer wins")
-        elif c == "scissors"
-            print("The user wins")
-
-    if u == "paper":
-        if c == "rock"
-            print("The user wins")
-        elif c == "paper":
-            print("It's a tie!")
-        elif c == "scissors"
-            print("The computer wins")
-
-
-    if u == "scissors":
-        if c == "rock"
-            print("The computer wins")
-        elif c == "paper":
-            print("The user wins")
-        elif c == "scissors"
-            print("It's a tie!")
-'''
     if winner == user_choice:
         print("You Won")
     elif winner == computer_choice:
         print("Computer Won")
     elif winner == None
         print ("Tie")
-'''
