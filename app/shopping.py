@@ -4,21 +4,19 @@ from pandas import read_csv
 
 # READ INVENTORY OF PRODUCTS
 def format_usd(my_price):
+    return f"${my_price:,.2f}"
     '''
     Formats numbers in USD with a dollar sign, two decimal, and a comma separtaor
-
     Params:
         n (numeric, like int or float) the number to be formatted
-
     Examples:
         format_usd(8)
         format_usd(4.5)
-    
     '''
-    return f"${my_price:,.2f}"
 
 #prevent app code from import
 if __name__ == "__main__":
+    #the syntax here is wrong
 
     products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
     products_df = read_csv(products_filepath)
@@ -48,11 +46,11 @@ if __name__ == "__main__":
     print("CHECKOUT AT: " + str(checkout_at.strftime("%Y-%M-%d %H:%m:%S")))
     print("---------")
     for p in selected_products:
-        print("SELECTED PRODUCT: " + p["name"] + "   " + '${:.2f}'.format(p["price"]))
+        print("SELECTED PRODUCT: " + p["name"] + "   " + format_usd(p["price"]))
 
     print("---------")
     print(f"SUBTOTAL: {format_usd(subtotal)}")
-    print(f"TAX: {format_usd{(subtotal * 0.0875)}")
+    print(f"TAX: {format_usd(subtotal * 0.0875)}")
     print(f"TOTAL: {format_usd(subtotal * 0.0875 + subtotal)}")
     print("---------")
     print("THANK YOU! PLEASE COME AGAIN SOON!")
