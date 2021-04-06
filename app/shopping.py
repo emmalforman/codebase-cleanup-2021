@@ -13,6 +13,10 @@ def format_usd(my_price):
         format_usd(8)
         format_usd(4.5)
     '''
+def find_product(selected_id, products):
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+    return matching_products
+
 
 #prevent app code from import
 if __name__ == "__main__":
@@ -30,7 +34,7 @@ if __name__ == "__main__":
         if selected_id.upper() == "DONE":
             break
         else:
-            matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+            matching_products = find_product(selected_id, products)
             if any(matching_products):
                 selected_products.append(matching_products[0])
             else:
