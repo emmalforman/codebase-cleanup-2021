@@ -3,6 +3,8 @@
 
 from app.shopping import format_usd
 from app.shopping import find_product
+from pandas import read_csv
+import os
 
 # TODO: test the code
 def test_format_usd():
@@ -10,5 +12,9 @@ def test_format_usd():
    assert format_usd(9.5) == "$9.50"
 
 def test_find_product():
-   assert find_product(1) == 'Chocolate Sandwich Cookies'
-
+   products_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+   products_df = read_csv(products_filepath)
+   products = products_df.to_dict("records")
+   print(find_product(1, products))
+   assert find_product(1, products) == [{'id': 1, 'name': 'Chocolate Sandwich Cookies', 'aisle': 'cookies cakes', 'department': 'snacks', 'price': 3.5}]
+   
